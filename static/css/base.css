@@ -6,7 +6,7 @@ body,
 html {
     position: relative;
     font-family: sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -14,16 +14,17 @@ html {
 
 body {
     padding: .5rem;
-    background-color: #f0f0f0;
-    background-color: grey;
+    color: #1a1a1a;
+    background-color: #222;
     background-image: url('/static/img/bg01.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 a {
-    color: steelblue;
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
@@ -49,7 +50,7 @@ h1 {
 }
 
 #wrap>header {
-    background-color: #f0f0f0;
+    background-color: #dd3fc654;
 }
 
 #wrap>main {
@@ -66,11 +67,11 @@ main>section h2:first-child, main>article h2:first-child {
 }
 
 #wrap>nav {
-    border-top: 2px solid grey;
-    border-bottom: 2px solid grey;
+    border-top: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(255, 255, 255);
     display: flex;
     align-items: center;
-    background-color: #f9f9f9;
+    background-color: #dd3fc654;
 }
 
 #wrap>nav a {
@@ -78,11 +79,11 @@ main>section h2:first-child, main>article h2:first-child {
 }
 
 #wrap>footer {
-    border-top: 2px solid grey;
+    border-top: 2px solid rgb(255, 255, 255);
     text-align: center;
     padding: 0.5rem;
     font-size: small;
-    background-color: #f9f9f9;
+    background-color: #dd3fc654;
 }
 
 /* Grid system */
@@ -126,8 +127,8 @@ main>section h2:first-child, main>article h2:first-child {
 }
 
 .card {
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: #b0878761;
     border-radius: 0 0 5px 5px;
 }
 
@@ -164,4 +165,10 @@ main>section h2:first-child, main>article h2:first-child {
     padding: .5rem;
     text-align: center;
     border-top: 2px solid grey;
+}
+
+input,
+textarea,
+button {
+    font: inherit;
 }

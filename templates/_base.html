@@ -12,21 +12,22 @@ Template base
     {% if page_css %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/' + page_css) }}">
     {% endif %}
-    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/x-icon">
-    <title>Cadastro de Itens</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/png">
+    <title>Kpaper</title>
 </head>
 
 <body>
 
     <div id="wrap">
         <header>
-            <h1>Cadastro de Itens</h1>
+            <h1><img src="{{ url_for('static', filename='img/logo.png') }}" alt="K Papelaria" height="48"> Papelaria </h1>
         </header>
 
         <nav>
             <a href="{{ url_for('index') }}">Início</a>
             <a href="{{ url_for('new_thing') }}">Novo</a>
             <a href="{{ url_for('about') }}">Sobre</a>
+            <a href="{{ url_for('contacts') }}">Contatos</a>
         </nav>
 
         <main>

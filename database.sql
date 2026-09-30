@@ -14,6 +14,18 @@ CREATE TABLE thing (
 	status TEXT CHECK (status IN ('on', 'off', 'del')) DEFAULT 'on'
 );
 
+-- Mensagens do formulário de contato
+DROP TABLE IF EXISTS contact;
+
+CREATE TABLE contact (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+    name TEXT,
+    email TEXT,
+    subject TEXT,
+    message TEXT
+);
+
 -- 3) Cadastra alguns "profile" para experimentos iniciais
 INSERT INTO thing 
 ( name, description, location, photo ) VALUES

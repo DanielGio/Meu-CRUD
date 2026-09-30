@@ -175,6 +175,29 @@ def delete(thing_id):
 def about():
     return render_template("about.html")
 
+@app.route("/contacts", methods=['GET', 'POST'])
+def contacts():
 
+    if request.method == 'POST':
+        name = request.form['name'].strip()
+        email = request.form['email'].strip()
+        subject = request.form['subject'].strip()
+        message = request.form['message'].strip()
+
+        with sqlite3.connect('database.db') as conn:
+            conn.execute("""
+                INSERT INTO contact (
+                    name, email, subject, message
+                ) VALUES (?, ?, ?, ?)
+            """, (name, email, subject, message))
+
+        flash('Mensagem enviada com sucesso!', 'success')
+
+        return redirect(url_for('contacts'))
+
+    return render_template(
+        "contacts.html",
+        page_css='contacts.css'
+    )
 if __name__ == "__main__":
     app.run(debug=True)

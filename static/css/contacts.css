@@ -1,0 +1,48 @@
+.contact-form {
+    max-width: 600px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: .25rem;
+    font-weight: bold;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .5rem;
+    font: inherit;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+}
+
+.btn {
+    padding: .5rem 1.25rem;
+    font: inherit;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: steelblue;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: orangered;
+}
+
+.my-3 { margin: 1rem 0; }
+.m-0 { margin: 0; }
+.py-3 { padding: 1rem 0; }
+.py-2 { padding: .5rem 0; }
+
+
+input,
+textarea,
+button {
+    font: inherit;
+}
