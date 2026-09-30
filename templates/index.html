@@ -10,7 +10,7 @@
 
 <section>
 
-    <h2>Todos os Trecos</h2>
+    <h2>Todos os Itens</h2>
     <small>Mais recentes primeiro.</small>
 
     {% if total > 0 %}
@@ -51,8 +51,8 @@
 
     {% else %}
     <p>
-        Nenhum treco cadastrado ainda!
-        <a href="{{ url_for('new_thing') }}">Cadastre um treco</a>
+        Nenhum Item cadastrado ainda!
+        <a href="{{ url_for('new_thing') }}">Cadastre um Item</a>
     </p>
     {% endif %}
 
