@@ -8,19 +8,21 @@ Template base
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     {% if page_css %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/' + page_css) }}">
     {% endif %}
-        <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/png">
-    <title>Kpaper</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/png">
+    <title>{% block title %}{% endblock %}{{ sitename }}</title>
 </head>
 
 <body>
 
     <div id="wrap">
         <header>
-            <h1><img src="{{ url_for('static', filename='img/logo.png') }}" alt="K Papelaria" height="48"> Papelaria </h1>
+                        <h1><a href="{{ url_for('index') }}" title="Voltar à página inicial"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="K Papelaria" height="48"></a> K Papelaria personalizada </h1>
         </header>
 
         <nav>
@@ -30,7 +32,7 @@ Template base
             <a href="{{ url_for('contacts') }}">Contatos</a>
         </nav>
 
-        <main>
+        <main class="{% block main_class %}{% endblock %}">
 
             {# Exibe mensagens "flash" vindas da session #}
             {% with messages = get_flashed_messages(with_categories=true) %}
@@ -46,7 +48,7 @@ Template base
 
         </main>
 
-        <footer>&copy; 2026 Cadastro de Itens</footer>
+        <footer>&copy; 2026 <strong>{{ sitename }}</strong></footer>
     </div>
 </body>
 

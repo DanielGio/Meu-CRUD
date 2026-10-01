@@ -12,6 +12,13 @@ app = Flask(__name__)
 app.secret_key = '_use_uma_secret_key_de_verdade_aqui_e_use_dotenv_em_deploy_'
 
 
+SITE_NAME = 'K Papelaria Personalizada'
+
+
+@app.context_processor
+def inject_globals():
+    return {'sitename': SITE_NAME}
+
 @app.route("/")
 def index():
 
